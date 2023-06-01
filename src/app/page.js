@@ -7,7 +7,8 @@ import Boton_visita from "@/components/Boton_visita";
 
 const page = () => {
     class Formacion {
-        constructor(lic, nombre, descripcion, url, imagen) {
+        constructor(id,lic, nombre, descripcion, url, imagen) {
+          this.id = id;
           this.lic = lic;
           this.nombre = nombre;
           this.descripcion = descripcion;
@@ -28,6 +29,7 @@ const page = () => {
       }
       //objetos de las formaciones
       const eneo = new Formacion(
+        1,
         "Licenciatura en Enfermería y Obstetricia",
         "Facultad de Enfermeria y Obstetricia",
         "La FENO, Facultad de Enfermería y Obstetricia de la UNAM, es la mejor alternativa para la formación de profesionales en enfermería que aporten a la sociedad y México vanguardia en la conservación y atención de la salud.",
@@ -35,13 +37,16 @@ const page = () => {
         "/images/eneo.jpg"
       );
       const fca = new Formacion(
+        2,
         "Licenciatura en Informática",
         "Facultad de contaduria y administracion",
         "Se encargan de Formar profesionales, profesores e investigadores de la contaduría, la administración, la informática y los negocios internacionales, que contribuyan al desarrollo económico del país mediante la solución de los problemas prácticos que enfrentan las empresas y las organizaciones, así como realizar investigación orientada a la generación del conocimiento de estas disciplinas; cultivando en su comunidad el espíritu analítico, crítico y reflexivo, y proporcionando las herramientas técnicas que les permitan ser altamente competitivos en los planos nacional e internacional.",
         "https://www.fca.unam.mx/index.php",
         "/images/fca.jpg"
       );
+      
       const [formaciones, setFormaciones] = useState({});
+      
       useEffect(() => {
         setFormaciones(fca);
       }, {});

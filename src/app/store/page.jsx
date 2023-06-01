@@ -4,7 +4,7 @@ import Card_clothes from "@/components/Card_clothes";
 import { useEffect, useState } from "react";
 import Card_others from "@/components/Card_others";
 const page = () => {
-  const [product, setProduct] = useState([]);
+  var [product, setProduct] = useState([]);
   //funcion para consumir la API de fakestore
   async function getProducto() {
     try {
@@ -20,7 +20,7 @@ const page = () => {
   }
   useEffect(() => {
     getProducto();
-  }, []);
+  }, product);
   //Funcion para flitrar los productos
   const list_categorys = [
     "men's clothing",
@@ -71,6 +71,7 @@ const page = () => {
               return (
                 <Card_clothes
                   item={producto}
+                  key={producto.id}
                 ></Card_clothes>
               );
             } else {

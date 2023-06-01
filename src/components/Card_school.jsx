@@ -3,13 +3,15 @@ import Boton_visita from './Boton_visita'
 import  Image from 'next/image'
 
 const Card_school = ({formaciones}) => {
+  const {imagen}=formaciones
   return (
     <div className="md:flex flex-row w-full">
           <Image
-          src = {formaciones.imagen}
+          key={formaciones.id}
+          src = {imagen}
           width={800}
           height={500}
-          alt='Foto FCA'></Image>
+          alt='Foto escuela'></Image>
           <div className="hero min-h-screen bg-base-200">
             <div className="hero-content text-center">
               <div className="max-w-md">

@@ -13,7 +13,6 @@ const Card_clothes = ({ item }) => {
       <div className="flex font-sans py-10">
         <div className="flex-none w-48 relative">
           <Image
-            layout="responsive"
             width={tamanho}
             height={tamanho}
             src={item.image}

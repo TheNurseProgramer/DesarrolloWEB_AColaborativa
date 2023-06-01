@@ -69,7 +69,7 @@ const Navbar = () => {
                     </span>
                     <div className="overflow-y-auto h-[40rem] w-96 dropdown-content p-2 shadow bg-base-100 rounded-box mt-4">
                       {shoppingCart.map((item) => {
-                        return <Card_scart item={item}></Card_scart>;
+                        return <Card_scart item={item} key={item.id}></Card_scart>;
                       })}
                       <div className="flex justify-between items-center border-t-2 borde-slate-50">
                         <h3 className="text-lg font-bold py-5">
