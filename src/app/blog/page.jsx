@@ -8,13 +8,17 @@ const page = () => {
         <div>
         <div className="mb-4 md:mb-0 w-full max-w-screen-md mx-auto relative" style={{height: '24em'}}>
         <div className="absolute left-0 bottom-0 w-full h-full z-10" style={{backgroundImage: 'linear-gradient(180deg,transparent,rgba(0,0,0,.7))'}} />
-        <img src="/images/informatica.jpg" className="absolute left-0 top-0 w-full h-full z-0 object-cover" />
+        <div className="absolute left-0 top-0 w-full h-full z-0 object-cover">
+          <Image src="/images/informatica.jpg" height={400} width={800} alt="Banner" style={{height: 384}}></Image>
+        </div>
         <div className="p-4 absolute bottom-0 left-0 z-20">
           <h2 className="text-4xl font-semibold text-gray-100 leading-tight">
            Tecnologias de la informacion para mejorar la enfermeria
           </h2>
           <div className="flex mt-3">
-            <img src="/images/enfemero.jpg" className="h-10 w-10 rounded-full mr-2 object-cover" />
+            <div className="h-10 w-10 rounded-full mr-2 object-cover">
+              <Image src="/images/enfemero.jpg" height={500} width={500} alt="Enfermero" style={{borderRadius: '50%'}}></Image>
+            </div>
             <div>
               <p className="font-semibold text-gray-200 text-sm"> The Nurse Programer </p>
               <p className="font-semibold text-gray-400 text-xs"> 25 de Mayo 2023 </p>
