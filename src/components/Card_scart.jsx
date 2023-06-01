@@ -12,6 +12,7 @@ const Card_scart = ({ item }) => {
           height={50}
           width={50}
           alt="Producto"
+          key={item.producto.id}
         />
       </figure>
       <div className="card-body">

@@ -4,7 +4,7 @@ import Link from "next/link";
 import Card_scart from "./Card_scart";
 import Boton_Buynow from "./Boton_Buynow";
 import { useShop } from "@/app/context/ShoppingCart";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Navbar = () => {
   const { shoppingCart } = useShop();
@@ -16,9 +16,7 @@ const Navbar = () => {
     }
     setTotal(sum);
   };
-  useEffect(() => {
-    sumar();
-  }, [total]);
+
   return (
     <div className="sticky top-0 z-50">
       <div className="navbar bg-base-100">
@@ -28,7 +26,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="flex-none">
-          <ul className="menu menu-horizontal px-1">
+          <div className="menu menu-horizontal px-1">
             <li>
               <Link href="/">Acerca de mi</Link>
             </li>
@@ -45,15 +43,15 @@ const Navbar = () => {
                     <label tabIndex={0} className=" rounded-btn">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="icon icon-tabler icon-tabler-shopping-cart"
+                        className="icon icon-tabler icon-tabler-shopping-cart"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
-                        stroke-width="2"
+                        strokeWidth="2"
                         stroke="currentColor"
                         fill="none"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap ="round"
+                        strokeLinejoin="round"
                       >
                         <path
                           stroke="none"
@@ -86,7 +84,7 @@ const Navbar = () => {
                 </div>
               </a>
             </li>
-          </ul>
+          </div>
         </div>
       </div>
     </div>

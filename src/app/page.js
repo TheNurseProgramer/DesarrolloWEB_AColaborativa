@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Card_school from "@/components/Card_school";
 import Boton_visita from "@/components/Boton_visita";
+
 const page = () => {
     class Formacion {
         constructor(lic, nombre, descripcion, url, imagen) {
@@ -166,11 +167,11 @@ const page = () => {
                       <div className="card-body">
                         <h2 className="card-title text-2xl">{exp.empresa}</h2>
                         <h2 className="text-xl">{`${exp.puesto} (${exp.fecha_inicio} - ${exp.fecha_fin})`}</h2>
-                        <ul>
+                        <div>
                           {exp.descripcion.map((tarea) => {
                             return <li>{tarea}</li>;
                           })}
-                        </ul>
+                        </div>
                         <Boton_visita url={exp.url}></Boton_visita>
                       </div>
                     </div>
