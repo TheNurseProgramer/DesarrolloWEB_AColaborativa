@@ -5,7 +5,7 @@ import Image from "next/image";
 import Card_school from "@/components/Card_school";
 import Boton_visita from "@/components/Boton_visita";
 
-const page = () => {
+const Page = () => {
     class Formacion {
         constructor(id,lic, nombre, descripcion, url, imagen) {
           this.id = id;
@@ -18,7 +18,8 @@ const page = () => {
       }
     
       class Experiencia {
-        constructor(empresa, puesto, descripcion, fecha_inicio, fecha_fin, url) {
+        constructor(id,empresa, puesto, descripcion, fecha_inicio, fecha_fin, url) {
+          this.id = id;
           this.empresa = empresa;
           this.puesto = puesto;
           this.descripcion = descripcion;
@@ -53,6 +54,7 @@ const page = () => {
     
       //objetos de las experiencias
       const neo = new Experiencia(
+        1,
         "Neolpharma",
         "Enfermero Laboral",
         [
@@ -71,6 +73,7 @@ const page = () => {
         "https://www.neolpharma.com/"
       );
       const tfv = new Experiencia(
+        2,
         "TFVictor",
         "Enfermero Laboral",
         [
@@ -89,6 +92,7 @@ const page = () => {
         "https://dacomsa.com/dacomsastorefront/dacomsa/es/tfVictorHome"
       );
       const cnu = new Experiencia(
+        3,
         "CNU UNAM",
         "Auxiliar TI",
         [
@@ -227,4 +231,4 @@ const page = () => {
         );
 };
 
-export default page;
+export default Page;

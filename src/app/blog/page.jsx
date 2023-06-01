@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const page = () => {
+const Page = () => {
   return (
     <div className="max-w-screen-xl mx-auto">
       <div className="mt-10">
@@ -125,4 +125,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

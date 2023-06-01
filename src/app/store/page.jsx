@@ -3,7 +3,7 @@ import React from "react";
 import Card_clothes from "@/components/Card_clothes";
 import { useEffect, useState } from "react";
 import Card_others from "@/components/Card_others";
-const page = () => {
+const Page = () => {
   var [product, setProduct] = useState([]);
   //funcion para consumir la API de fakestore
   async function getProducto() {
@@ -20,7 +20,7 @@ const page = () => {
   }
   useEffect(() => {
     getProducto();
-  }, product);
+  }, []);
   //Funcion para flitrar los productos
   const list_categorys = [
     "men's clothing",
@@ -45,9 +45,9 @@ const page = () => {
           Filtros
         </h2>
         <div className="flex flex-wrap justify-center items-center gap-10 pt-20">
-          {list_categorys.map((values) => {
+          {list_categorys.map((values,i) => {
             return (
-              <div className="form-control">
+              <div className="form-control "key={i}>
                 <label className="label cursor-pointer">
                   <span className="label-text">{values}</span>
                   <input
@@ -62,7 +62,7 @@ const page = () => {
           })}
         </div>
         <div>
-          {aux.map((producto) => {
+          {aux.map((producto,i) => {
             const { category } = producto;
             if (
               category === "men's clothing" ||
@@ -71,13 +71,14 @@ const page = () => {
               return (
                 <Card_clothes
                   item={producto}
-                  key={producto.id}
+                  key={i}
                 ></Card_clothes>
               );
             } else {
               return (
                 <Card_others
                   item={producto}
+                  key={i}
                 ></Card_others>
               );
             }
@@ -88,4 +89,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -15,6 +15,7 @@ const Card_others = ({ item }) => {
             height={tamanho}
             src={item.image}
             key={item.id}
+            alt={item.title}
           />
         </div>
         <form className="flex-auto p-6">
