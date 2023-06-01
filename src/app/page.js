@@ -46,11 +46,8 @@ const Page = () => {
         "/images/fca.jpg"
       );
       
-      const [formaciones, setFormaciones] = useState({});
+      const [formaciones, setFormaciones] = useState(fca);
       
-      useEffect(() => {
-        setFormaciones(fca);
-      }, {});
     
       //objetos de las experiencias
       const neo = new Experiencia(
@@ -166,19 +163,20 @@ const Page = () => {
               Experiencia laboral
             </h2>
             <div className="carousel w-full">
-              {experiencias.map((exp) => {
+              {experiencias.map((exp,i) => {
                 return (
                   <div
                     id={exp.empresa}
                     className="carousel-item w-full grid justify-items-center items-center"
+                    key={i}
                   >
                     <div className="card w-96 glass">
                       <div className="card-body">
                         <h2 className="card-title text-2xl">{exp.empresa}</h2>
                         <h2 className="text-xl">{`${exp.puesto} (${exp.fecha_inicio} - ${exp.fecha_fin})`}</h2>
                         <div>
-                          {exp.descripcion.map((tarea) => {
-                            return <li>{tarea}</li>;
+                          {exp.descripcion.map((tarea,i) => {
+                            return <li key={i}>{tarea}</li>;
                           })}
                         </div>
                         <Boton_visita url={exp.url}></Boton_visita>
@@ -189,8 +187,8 @@ const Page = () => {
               })}
             </div>
             <div className="flex justify-center w-full py-2 gap-2">
-              {experiencias.map((exp) => {
-                return <a href={"#" + exp.empresa} className="btn btn-primary btn-xs"></a>;
+              {experiencias.map((exp,i) => {
+                return <a href={"#" + exp.empresa} key = {i}className="btn btn-primary btn-xs"></a>;
               })}
             </div>
             <div>

@@ -69,17 +69,23 @@ const Page = () => {
               category === "women's clothing"
             ) {
               return (
-                <Card_clothes
+                <div className="form-control "key={i}>
+                  <Card_clothes
                   item={producto}
                   key={i}
                 ></Card_clothes>
+                </div>
+                
               );
             } else {
               return (
-                <Card_others
+                <div className="form-control "key={i}>
+                   <Card_others
                   item={producto}
                   key={i}
                 ></Card_others>
+                </div>
+             
               );
             }
           })}

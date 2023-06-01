@@ -5,9 +5,9 @@ import Boton_Buynow from "./Boton_Buynow";
 
 const Card_clothes = ({ item }) => {
   const tamanho = 100;
- 
+
   const talla = ["XS", "S", "M", "L", "XL"];
-  
+
   return (
     <div className="py-20 px-20">
       <div className="flex font-sans py-10">
@@ -16,8 +16,8 @@ const Card_clothes = ({ item }) => {
             width={tamanho}
             height={tamanho}
             src={item.image}
-          key={item.id}
-          alt={item.title}
+            key={item.id}
+            alt={item.title}
           />
         </div>
         <form className="flex-auto p-6">
@@ -34,9 +34,9 @@ const Card_clothes = ({ item }) => {
           </div>
           <div className="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
             <div className="space-x-2 flex text-sm">
-              {talla.map((talla) => {
+              {talla.map((talla,i) => {
                 return (
-                  <label>
+                  <label key={i}>
                     <input
                       className="sr-only peer"
                       name="size"
